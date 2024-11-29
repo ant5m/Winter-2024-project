@@ -18,9 +18,18 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id,
 
 user = sp.current_user()
 
-top_tracks = sp.current_user_top_tracks(limit=50, time_range='medium_term')
+top_tracks = sp.current_user_top_tracks(limit=50, time_range='long_term')
 
+count = {}
 for track in top_tracks['items']:
-    print(track['name'], 'by', track['artists'][0]['name'])
+    
+    if track['artists'][0]['name'] not in count:   
+        count[track['artists'][0]['name']] = [track['name']]
+    else:
+        count[track['artists'][0]['name']] += [track['name']]
     
     
+for i in count:
+    print(i, count[i])
+
+
