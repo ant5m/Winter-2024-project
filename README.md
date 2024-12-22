@@ -9,4 +9,7 @@ started messing around with the main.py which will do majority of the work that 
 i set up the client id on spotify for developers
 end.
 
+12/21
+I added some files, did some research on how to use Flask, the requirements.txt shows the required libraries needed to run the code
+
 Antonio recap:
